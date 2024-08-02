@@ -49,10 +49,10 @@ typedef struct
     float x;
     float y;
 }
-Position;
+Point;
 
-typedef Position Scale;
-typedef Position Vector2D;
+typedef Point Scale;
+typedef Point Vector2D;
 
 typedef struct
 {
@@ -66,8 +66,8 @@ SpriteClip;
 typedef struct
 {
     SDL_Texture* texture;
-    Position     cursorPos;
-    Position     midPos;
+    Point        cursorPos;
+    Point        midPos;
     Scale        scale;
     SpriteClip   clip;
 }
