@@ -51,8 +51,9 @@ typedef struct
 }
 Point;
 
-typedef Point Scale;
-typedef Point Vector2D;
+typedef Point    Scale;
+typedef Point    Vector2D;
+typedef SDL_Rect Collision;
 
 typedef struct
 {
@@ -83,5 +84,13 @@ typedef struct
     float frameTime;
 }
 Animation;
+
+typedef struct
+{
+    Sprite*   sprite;
+    Animation animation;
+    Collision collisionBox;
+}
+Entity;
 
 #endif // _STRUCT_H_
