@@ -1,3 +1,28 @@
+/**********************************************************************
+ *
+ * @file    main.c
+ * @brief   This source file is the main entry point
+ *          of my SDL2 program
+ *
+ * @author  Jerico G. Despe (aka @AcerStructor)
+ * 
+ * @details
+ * This source file includes implementations for function which is
+ * used to limit the framerate and also the main function.
+ * 
+ * @note
+ * Ensure that appropriate header files such as common.h,
+ * struct.h, init.h, and initSplashScreen.h, are included
+ * in this source file
+ *
+ * @dependencies
+ * SDL2 and SDL2_Image Libraries
+ *
+ * @version
+ * 1.0 - Initial version
+ *
+ **********************************************************************/
+
 #include "common.h"
 #include "struct.h"
 #include "input.h"

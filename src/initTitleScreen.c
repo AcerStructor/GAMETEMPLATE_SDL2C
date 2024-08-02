@@ -1,5 +1,23 @@
-#include <stdio.h>
+/**************************************************************************
+ *
+ * @file    initSplashScreen.c
+ *
+ * @brief   TitleScreen is the main menu of this program. Where user use
+ *          key inputs to start the game or other way around.
+ *
+ * @author  Jerico G. Despe (aka @AcerStructor)
+ *
+ * @note
+ * Ensure that the appropriate header files such as common.h, struct.h
+ * sprite.h, and initTitleScreen.h is included where these functions are
+ * used.
+ *
+ * @dependencies
+ * SDL2 SDL2_image Libraries
+ *
+ **************************************************************************/
 
+#include <stdio.h>
 #include "struct.h"
 #include "initTitleScreen.h"
 

@@ -1,3 +1,17 @@
+/**********************************************************************
+ *
+ * @file    defs.h
+ * @brief   This header file holds all written definitions and
+ *          and constants that are used for this program
+ *
+ * @author  Jerico G. Despe (aka @AcerStructor)
+ *
+ * @details
+ * This header file includes constants and definitions such as the
+ * program's window width, height, frame target time and more.
+ *
+ **********************************************************************/
+
 #ifndef _DEFS_H_
 #define _DEFS_H_
 

@@ -1,3 +1,23 @@
+/**************************************************************************
+ *
+ * @file    initSplashScreen.c
+ *
+ * @brief   Splash Screen is the first scene of the program which will
+ *          last for few or more seconds before changing scene to
+ *          titlescreen.
+ *
+ * @author  Jerico G. Despe (aka @AcerStructor)
+ *
+ * @note
+ * Ensure that the appropriate header files such as common.h, struct.h
+ * sprite.h, initSplashScreen.h, and initTitleScreen.h is included where
+ * these functions are used.
+ *
+ * @dependencies
+ * SDL2 SDL2_image Libraries
+ *
+ **************************************************************************/
+
 #include "common.h"
 #include "struct.h"
 #include "sprite.h"

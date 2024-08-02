@@ -1,3 +1,24 @@
+/**********************************************************************
+ *
+ * @file    struct.h
+ * @brief   This header file holds all structs which are used for
+ *          this program.
+ *
+ * @author  Jerico G. Despe (aka @AcerStructor)
+ *
+ * @details
+ * This header file includes the struct implementation for game data,
+ * sprites, animation and etc.
+ *
+ * @note
+ * Ensure that the appropriate header file (defs.h) is included where
+ * these struct implementations are used.
+ * 
+ * @dependencies
+ * SDL2 SDL2_Image libraries
+ *
+ **********************************************************************/
+
 #ifndef _STRUCT_H_
 #define _STRUCT_H_
 
