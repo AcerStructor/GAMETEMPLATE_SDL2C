@@ -1,3 +1,9 @@
+/*
+ * @file   spriteClip.c
+ * @brief  This is the source code for spriteClip.c
+ * #author Jerico G. Despe (aka @AcerStructor)
+ */
+
 #include <SDL.h>
 #include "spriteClip.h"
 

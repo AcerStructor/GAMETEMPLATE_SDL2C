@@ -1,3 +1,9 @@
+/*
+ * @file   sprite.c
+ * @brief  This is the source code for sprite.c
+ * #author Jerico G. Despe (aka @AcerStructor)
+ */
+
 #include "draw.h"
 #include "sprite.h"
 

@@ -1,3 +1,9 @@
+/*
+ * @file   draw.c
+ * @brief  This is the source code for draw.h
+ * #author Jerico G. Despe (aka @AcerStructor)
+ */
+
 #include "draw.h"
 
 extern Game* game;

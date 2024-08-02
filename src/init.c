@@ -1,3 +1,9 @@
+/*
+ * @file   init.c
+ * @brief  This is the source code for init.c
+ * #author Jerico G. Despe (aka @AcerStructor)
+ */
+
 #include "common.h"
 #include "init.h"
 #include "struct.h"

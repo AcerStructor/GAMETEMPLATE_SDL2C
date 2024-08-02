@@ -1,3 +1,9 @@
+/*
+ * @file   input.c
+ * @brief  This is the source code for input.c
+ * #author Jerico G. Despe (aka @AcerStructor)
+ */
+
 #include <SDL.h>
 #include "input.h"
 
