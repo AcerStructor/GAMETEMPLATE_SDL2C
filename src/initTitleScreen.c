@@ -28,8 +28,6 @@ static void Update(float deltaTime);            // for processing game logics
 static void HandleKeyInput(SDL_Event* evnt);    // for handling user key input
 static void Render();                           // for drawing sprites on game
 static void Destroy();                          // for freeing memory after exit
-
-
 void InitTitleScreen()
 {
     game->delegate.destroy(); // deallocate previous scene
