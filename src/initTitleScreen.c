@@ -17,7 +17,7 @@
  *
  **************************************************************************/
 
-#include <stdio.h>
+#include "common.h"
 #include "struct.h"
 #include "initTitleScreen.h"
 
