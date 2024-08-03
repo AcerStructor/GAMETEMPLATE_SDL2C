@@ -50,8 +50,12 @@ LIB_DIR := libs
 DEBUG_DIR   := debug
 RELEASE_DIR := release
 
-# Files
-SRC = $(wildcard $(SRC_DIR)/*.c)
+INCLUDE = -I include
+
+# Find all .c files inside SRC_DIR and its subdirectories
+SRC = $(wildcard $(SRC_DIR)/*.c $(SRC_DIR)/*/*.c)
+
+# Define corresponding .o files in OBJ_DIR
 OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 
 # SDL2 CONFIGURATION
@@ -128,7 +132,7 @@ $(TARGET): $(OBJ)
 	$(CC) $(PROG_ARCHITECTURE) $(OBJ) -o $(BUILD_DIR)/$@ $(SDL2_LIBS)
 
 $(OBJ): $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c | $(OBJ_DIR)
-	$(CC) $(PROG_ARCHITECTURE) -c $< -o $@ $(CFLAGS) $(SDL2_CFLAGS)
+	$(CC) $(PROG_ARCHITECTURE) -c $< -o $@ $(CFLAGS) $(INCLUDE) $(SDL2_CFLAGS)
 
 # Create obj directory if it doesn't exist
 $(OBJ_DIR):
