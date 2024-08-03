@@ -4,6 +4,7 @@
  * #author Jerico G. Despe (aka @AcerStructor)
  */
 
+#include "utils.h"
 #include "draw.h"
 #include "sprite.h"
 
@@ -85,9 +86,6 @@ void SetSpritePosition(Sprite* sprite, float x, float y)
     sprite->midPos.y = y;
 
     /* CALCULATE CENTER */
-    float midScaleX = sprite->scale.x / 2;
-    float midScaleY = sprite->scale.y / 2;
-
-    sprite->cursorPos.x = (sprite->midPos.x - midScaleX);
-    sprite->cursorPos.y = (sprite->midPos.y - midScaleY);
+    sprite->cursorPos.x = Get_RectMidPoint(sprite->midPos.x, sprite->scale.x);
+    sprite->cursorPos.y = Get_RectMidPoint(sprite->midPos.y, sprite->scale.y);
 }

@@ -1,4 +1,5 @@
 #include <SDL_rect.h>
+#include "utils.h"
 #include "collision.h"
 
 CBOOL HasCollisionIntersection(CollisionBox colliderOne, CollisionBox colliderTwo)
@@ -12,11 +13,8 @@ void  SetCollisionBoxPosition(CollisionBox* collider, float x, float y)
     collider->midPos.y = y;
 
     /* CALCULATE CENTER */
-    float midScaleX = (collider->box.x / 2);
-    float midScaleY = (collider->box.y / 2);
-
-    collider->box.x = (collider->midPos.x - midScaleX);
-    collider->box.y = (collider->midPos.y - midScaleY);
+    collider->box.x = Get_RectMidPoint(collider->midPos.x, collider->box.w);
+    collider->box.y = Get_RectMidPoint(collider->midPos.y, collider->box.h);
 }
 
 
