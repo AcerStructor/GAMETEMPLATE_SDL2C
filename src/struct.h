@@ -75,9 +75,8 @@ Sprite;
 
 typedef struct
 {
-    Point cursorPos;
-    Point midPos;
-    Scale scale;
+    SDL_Rect box;
+    Point    midPos;
 }
 CollisionBox;
 
