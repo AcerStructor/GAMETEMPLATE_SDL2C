@@ -53,7 +53,6 @@ Point;
 
 typedef Point    Scale;
 typedef Point    Vector2D;
-typedef SDL_Rect Collision;
 
 typedef struct
 {
@@ -76,6 +75,14 @@ Sprite;
 
 typedef struct
 {
+    Point cursorPos;
+    Point midPos;
+    Scale scale;
+}
+CollisionBox;
+
+typedef struct
+{
     CBYTE currentFrames; // Should be set as 0 by default
     float elapsedTime;
     CBYTE startFrame;
@@ -87,9 +94,9 @@ Animation;
 
 typedef struct
 {
-    Sprite*   sprite;
-    Animation animation;
-    Collision collisionBox;
+    Sprite*      sprite;
+    Animation    animation;
+    CollisionBox collisionBox;
 }
 Entity;
 
