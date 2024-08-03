@@ -27,7 +27,7 @@ SDL_Texture* LoadTexture(const char* spritePath)
     return temp;
 }
 
-void DrawTexture(SDL_Texture* texture, Scale scale, Position pos, SDL_Rect* clipRect)
+void DrawTexture(SDL_Texture* texture, Scale scale, Point pos, SDL_Rect* clipRect)
 {
     if (texture == NULL) return;
 
