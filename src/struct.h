@@ -82,7 +82,7 @@ CollisionBox;
 
 typedef struct
 {
-    CBYTE currentFrames; // Should be set as 0 by default
+    CBYTE currentFrame; // Should be set as 0 by default
     float elapsedTime;
     CBYTE startFrame;
     CBYTE endFrame;
