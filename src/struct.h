@@ -78,7 +78,7 @@ typedef struct
     SDL_Rect box;
     Point    midPos;
 }
-CollisionBox;
+Collider;
 
 typedef struct
 {
@@ -95,7 +95,7 @@ typedef struct
 {
     Sprite*      sprite;
     Animation    animation;
-    CollisionBox collisionBox;
+    Collider     collider;
 }
 Entity;
 

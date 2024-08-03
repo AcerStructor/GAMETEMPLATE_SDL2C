@@ -2,10 +2,10 @@
 #define _COLLISION_H_
 #include "struct.h"
 
-void   InitCollisionBox(CollisionBox* collider, Point initialPos, Scale scale);
+void   InitCollisionBox(Collider* collider, Point initialPos, Scale scale);
 
-CBOOL  HasCollisionIntersection(CollisionBox colliderOne, CollisionBox colliderTwo);
+CBOOL  HasCollisionIntersection(Collider colliderOne, Collider colliderTwo);
 
-void   SetCollisionBoxPosition(CollisionBox* collider, float x, float y);
+void   SetCollisionBoxPosition(Collider* collider, float x, float y);
 
 #endif // _COLLISION_H_

@@ -2,7 +2,7 @@
 #include "utils.h"
 #include "collision.h"
 
-void InitCollisionBox(CollisionBox* collider, Point initialPos, Scale scale)
+void InitCollisionBox(Collider* collider, Point initialPos, Scale scale)
 {
     collider->box.x = 0;
     collider->box.y = 0;
@@ -13,12 +13,12 @@ void InitCollisionBox(CollisionBox* collider, Point initialPos, Scale scale)
 
 }
 
-CBOOL HasCollisionIntersection(CollisionBox colliderOne, CollisionBox colliderTwo)
+CBOOL HasCollisionIntersection(Collider colliderOne, Collider colliderTwo)
 {
     return SDL_HasIntersection(&colliderOne.box, &colliderTwo.box);
 }
 
-void SetCollisionBoxPosition(CollisionBox* collider, float x, float y)
+void SetCollisionBoxPosition(Collider* collider, float x, float y)
 {
     collider->midPos.x = x;
     collider->midPos.y = y;
