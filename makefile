@@ -50,7 +50,7 @@ DEBUG_DIR   := debug
 RELEASE_DIR := release
 
 # Build Directories
-INCLUDE = -I include
+INCLUDE = -I headers
 
 # Find all .c files inside SRC_DIR and its subdirectories
 SRC         = $(wildcard $(SRC_DIR)/*.c $(SRC_DIR)/*/*.c $(SRC_DIR)/*/*/*.c)
