@@ -144,7 +144,7 @@ $(OBJ_SUBDIRS):
 	@mkdir -p $@
 
 clean:
-	@rm $(OBJ_DIR)/*.o
+	@rm -rf $(OBJ_DIR)/*.o $(OBJ_DIR)/*/*.o $(OBJ_DIR)/*/*/*.o
 
 cleanbin:
 	@rm -rf $(BIN_DIR)
