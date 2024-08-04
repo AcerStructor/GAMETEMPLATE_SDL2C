@@ -22,7 +22,7 @@ BUILD    ?= DEBUG
 # ---------------------
 # WINDOWS
 # LINUX
-# TODO MS-DOS
+# WEB
 #
 PLATFORM ?= LINUX
 
