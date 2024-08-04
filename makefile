@@ -46,17 +46,19 @@ OBJ_DIR := obj
 # 3rd Party Library directory
 LIB_DIR := libs
 
-# Build Directories
 DEBUG_DIR   := debug
 RELEASE_DIR := release
 
+# Build Directories
 INCLUDE = -I include
 
 # Find all .c files inside SRC_DIR and its subdirectories
-SRC = $(wildcard $(SRC_DIR)/*.c $(SRC_DIR)/*/*.c)
+SRC         = $(wildcard $(SRC_DIR)/*.c $(SRC_DIR)/*/*.c $(SRC_DIR)/*/*/*.c)
+SRC_SUBDIRS = $(wildcard $(SRC_DIR)/*/ $(SRC_DIR)/*/*/)
 
 # Define corresponding .o files in OBJ_DIR
 OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
+OBJ_SUBDIRS = $(patsubst $(SRC_DIR)/%, $(OBJ_DIR)/%, $(SRC_SUBDIRS))
 
 # SDL2 CONFIGURATION
 SDL2_CFLAGS  = $(shell $(SDL2_CONFIG) --cflags)
@@ -137,7 +139,8 @@ $(OBJ): $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c | $(OBJ_DIR)
 # Create obj directory if it doesn't exist
 $(OBJ_DIR):
 	@echo "[BUILD LOG]: Creating obj directory... "; \
-		mkdir -p $@
+		mkdir -p $@; \
+		mkdir -p $(OBJ_SUBDIRS)
 
 clean:
 	@echo "[CLEAN LOG]: Cleaning obj files..."; \
