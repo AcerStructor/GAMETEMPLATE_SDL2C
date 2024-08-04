@@ -53,16 +53,16 @@ RELEASE_DIR := release
 INCLUDE = -I headers
 
 # Find all .c files inside SRC_DIR and its subdirectories
-SRC         = $(wildcard $(SRC_DIR)/*.c $(SRC_DIR)/*/*.c $(SRC_DIR)/*/*/*.c)
 SRC_SUBDIRS = $(wildcard $(SRC_DIR)/*/ $(SRC_DIR)/*/*/)
+SRC         = $(wildcard $(SRC_DIR)/*.c $(SRC_DIR)/*/*.c $(SRC_DIR)/*/*/*.c)
 
 # Define corresponding .o files in OBJ_DIR
-OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 OBJ_SUBDIRS = $(patsubst $(SRC_DIR)/%, $(OBJ_DIR)/%, $(SRC_SUBDIRS))
+OBJ         = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 
 # SDL2 CONFIGURATION
-SDL2_CFLAGS  = $(shell $(SDL2_CONFIG) --cflags)
-SDL2_LIBS    = $(shell $(SDL2_CONFIG) --libs) -lSDL2_image
+SDL2_CFLAGS = $(shell $(SDL2_CONFIG) --cflags)
+SDL2_LIBS   = $(shell $(SDL2_CONFIG) --libs) -lSDL2_image
 
 # Check if ARCHITECTURE is set to 32bit
 ifeq ($(ARCHITECTURE), X86)
@@ -133,26 +133,24 @@ $(TARGET): $(OBJ)
 	$(INIT_RESOURCES)
 	$(CC) $(PROG_ARCHITECTURE) $(OBJ) -o $(BUILD_DIR)/$@ $(SDL2_LIBS)
 
-$(OBJ): $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c | $(OBJ_DIR)
+$(OBJ): $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c | $(OBJ_DIR) $(OBJ_SUBDIRS)
 	$(CC) $(PROG_ARCHITECTURE) -c $< -o $@ $(CFLAGS) $(INCLUDE) $(SDL2_CFLAGS)
 
 # Create obj directory if it doesn't exist
 $(OBJ_DIR):
-	@echo "[BUILD LOG]: Creating obj directory... "; \
-		mkdir -p $@; \
-		mkdir -p $(OBJ_SUBDIRS)
+	@mkdir -p $@
+
+$(OBJ_SUBDIRS):
+	@mkdir -p $@
 
 clean:
-	@echo "[CLEAN LOG]: Cleaning obj files..."; \
-		rm $(OBJ_DIR)/*.o
+	@rm $(OBJ_DIR)/*.o
 
 cleanbin:
-	@echo "[CLEAN LOG]: Cleaning bin directory..."; \
-		rm -rf $(BIN_DIR)
+	@rm -rf $(BIN_DIR)
 
 # Removes both bin and obj
 cleanall:
-	@echo "[CLEAN LOG]: Cleaning bin and obj..."; \
-		rm -rf $(BIN_DIR) $(OBJ_DIR)
+	@rm -rf $(BIN_DIR) $(OBJ_DIR)
 
 .PHONY: clean cleanbin cleanall
