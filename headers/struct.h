@@ -40,7 +40,7 @@ typedef struct
     SDL_Window*    window;
     SDL_Renderer*  renderer;
     CBOOL          isRunning;
-    Scene          delegate;
+    Scene          currentScene;
 }
 Game;
 

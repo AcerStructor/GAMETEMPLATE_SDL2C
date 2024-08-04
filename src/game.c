@@ -60,14 +60,14 @@ int main(int argc, char* argv[])
 
         // PROCESS GAME:
         HandleUserInput();
-        game->delegate.update(deltaTime);
-        game->delegate.render();
+        game->currentScene.update(deltaTime);
+        game->currentScene.render();
 
         // FRAME CAPPING
         FrameCap(frameStart, FRAME_TARGET_TIME);
     }
 
-    game->delegate.destroy();
+    game->currentScene.destroy();
 
     return EXIT_SUCCESS;
 }

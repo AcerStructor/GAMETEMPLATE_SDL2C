@@ -30,13 +30,13 @@ static void Render();                           // for drawing sprites on game
 static void Destroy();                          // for freeing memory after exit
 void InitTitleScreen()
 {
-    game->delegate.destroy(); // deallocate previous scene
+    game->currentScene.destroy(); // deallocate previous scene
 
     /* INITIALIZE SCENE */
-    game->delegate.handleKeyInput = &HandleKeyInput;
-    game->delegate.update         = &Update;
-    game->delegate.render         = &Render;
-    game->delegate.destroy        = &Destroy;
+    game->currentScene.handleKeyInput = &HandleKeyInput;
+    game->currentScene.update         = &Update;
+    game->currentScene.render         = &Render;
+    game->currentScene.destroy        = &Destroy;
 
     /* INITIALIZE GAME OBJECTS */
     Setup();
