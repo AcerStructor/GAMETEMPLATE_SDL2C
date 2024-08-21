@@ -2,7 +2,7 @@
 # Written by Jerico G. Despe
 ###################################################
 
-TARGET = SDL2_CTemplate
+TARGET = GAMETEMPLATE_SDL2C
 
 # COMPILER CONFIG
 # ---------------------
