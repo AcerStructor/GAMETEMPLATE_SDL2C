@@ -72,7 +72,7 @@ endif
 # Check what platform is selected for build process
 # C COMPILER CONFIGURATION
 ifeq ($(PLATFORM), WINDOWS)
-	CC            = x86_64-w64-mingw32-gcc
+	CC = x86_64-w64-mingw32-gcc
 	
 	# set SDL2 config
 	SDL2_CONFIG   = $(SDL2_LIB_PATH)/bin/sdl2-config
