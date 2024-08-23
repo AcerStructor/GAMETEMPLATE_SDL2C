@@ -74,10 +74,8 @@ endif
 ifeq ($(PLATFORM), WINDOWS)
 	CC = x86_64-w64-mingw32-gcc
 	
-	# set SDL2 config
+	# SDL2 64 bit configuration
 	SDL2_CONFIG   = $(SDL2_LIB_PATH)/bin/sdl2-config
-	
-	# set SDL2 lib path to 64bit directory
 	SDL2_LIB_PATH = $(LIB_DIR)/x86_64/SDL2
 	
 	# OUTPUT DIRECTORY	
@@ -96,11 +94,10 @@ ifeq ($(PLATFORM), WINDOWS)
 	INIT_DLL = @echo "[BUILD LOG] Setting dll files..."; \
 	           cp -f $(SDL2_LIB_PATH)/bin/*.dll $(BUILD_DIR)
 else # Sets to LINUX by default
-	# SDL2 CONFIGURATION
+	# SDL2 Linux CONFIGURATION
 	SDL2_CONFIG  := sdl2-config
 	PLATFORM_DIR := linux
 	
-	# If ARCHITECTURE is set to 32bit
 	ifeq ($(ARCHITECTURE), X86)
 		# Explicitly set SDL2 Library configuration to 32bit
 		SDL2_LIBS = -L/usr/lib32 -lSDL2 -lSDL2_image
