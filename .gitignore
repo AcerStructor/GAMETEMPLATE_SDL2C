@@ -3,6 +3,5 @@
 compile_commands.json
 
 # Ignore Directories
-obj/
 bin/
-libs/
+build/
