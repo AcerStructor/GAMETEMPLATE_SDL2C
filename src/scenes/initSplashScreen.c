@@ -62,6 +62,7 @@ static void Setup()
 
 static void Update(float deltaTime)
 {
+    // TODO
 }
 
 static void HandleKeyInput(SDL_Event* evnt)
