@@ -1,5 +1,7 @@
+# Set cmake version required
 cmake_minimum_required (VERSION 3.26)
 
+# Set project info
 project (
     GAMETEMPLATE_SDL2C
     VERSION 1.0.0
@@ -13,6 +15,7 @@ if (PROJECT_BINARY_DIR STREQUAL PROJECT_SOURCE_DIR)
     )
 endif()
 
+# Set output directory
 set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set (CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
